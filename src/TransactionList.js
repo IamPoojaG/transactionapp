@@ -19,8 +19,15 @@ function TransactionList({ transactions }) {
             </div>
 
             <div>
-              <p style={{ color: 'green' }}>
-                <b>+${transaction.amount.toFixed(2)}</b>
+              <p
+                style={
+                  transaction.isAdded ? { color: 'green' } : { color: 'red' }
+                }
+              >
+                <b>
+                  {transaction.isAdded ? '+' : '-'}$
+                  {transaction.amount.toFixed(2)}
+                </b>
               </p>
               <p>{transaction.task}</p>
             </div>
